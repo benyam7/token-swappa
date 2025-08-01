@@ -22,7 +22,7 @@ export function TokenSwappaApp() {
     const [toToken, setToToken] = useState<TokenOrNull>(null);
     const [fromAmount, setFromAmount] = useState<string>(''); // Changed initial value to ""
     const [toAmount, setToAmount] = useState<string>('');
-    const [fromUSDMode, setFromUSDMode] = useState<boolean>(false);
+    const [fromUSDMode, setFromUSDMode] = useState<boolean>(true);
     const [toUSDMode, setToUSDMode] = useState<boolean>(false);
     const [showQuickSelect, setShowQuickSelect] = useState<boolean>(false);
     const [quickSelectTimeout, setQuickSelectTimeout] =
