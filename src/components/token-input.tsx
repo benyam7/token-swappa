@@ -76,15 +76,15 @@ export function TokenInput({
     };
 
     const displayedValue = isUSDMode ? usdValue : amount;
-    let fontSizeClass = 'text-4xl';
-    if (displayedValue.length > 10) {
-        fontSizeClass = 'text-3xl';
+    let fontSizeClass = isMobile ? 'text-2xl sm:text-4xl' : 'text-4xl';
+    if (displayedValue.length > 8) {
+        fontSizeClass = isMobile ? 'text-xl sm:text-3xl' : 'text-3xl';
     }
-    if (displayedValue.length > 15) {
-        fontSizeClass = 'text-2xl';
+    if (displayedValue.length > 12) {
+        fontSizeClass = isMobile ? 'text-lg sm:text-2xl' : 'text-2xl';
     }
-    if (displayedValue.length > 20) {
-        fontSizeClass = 'text-xl';
+    if (displayedValue.length > 16) {
+        fontSizeClass = isMobile ? 'text-base sm:text-xl' : 'text-xl';
     }
 
     return (
@@ -125,7 +125,7 @@ export function TokenInput({
                     )} */}
 
                 {/* Main content area */}
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center justify-between mb-2 min-w-0">
                     {/* Input field or loading spinner */}
                     {loading ? (
                         <div
@@ -139,7 +139,7 @@ export function TokenInput({
                             />
                         </div>
                     ) : isUSDMode ? (
-                        <div className="flex items-center flex-grow mr-4 min-w-0">
+                        <div className="flex items-center flex-grow mr-2 min-w-0 overflow-hidden">
                             <span
                                 className={`font-bold text-gray-900 dark:text-gray-100 mr-2 ${fontSizeClass} transition-all duration-200`}
                                 aria-hidden="true"
@@ -153,7 +153,7 @@ export function TokenInput({
                                 onChange={handleAmountChange}
                                 placeholder={placeholder}
                                 readOnly={readOnly}
-                                className={`font-bold text-gray-900 dark:text-gray-100 bg-transparent border-none outline-none flex-1 ${
+                                className={`font-bold text-gray-900 dark:text-gray-100 bg-transparent border-none outline-none flex-1 min-w-0 w-0 ${
                                     isPulsing ? 'animate-pulseSubtle' : ''
                                 } ${fontSizeClass} transition-all duration-200`}
                                 aria-label={`${label} amount in USD`}
@@ -168,7 +168,7 @@ export function TokenInput({
                             onChange={handleAmountChange}
                             placeholder={placeholder}
                             readOnly={readOnly}
-                            className={`font-bold text-gray-900 dark:text-gray-100 bg-transparent border-none outline-none flex-grow mr-4 min-w-0 ${
+                            className={`font-bold text-gray-900 dark:text-gray-100 bg-transparent border-none outline-none flex-grow mr-2 min-w-0 w-0 ${
                                 isPulsing ? 'animate-pulseSubtle' : ''
                             } ${fontSizeClass} transition-all duration-200`}
                             aria-label={`${label} amount in ${

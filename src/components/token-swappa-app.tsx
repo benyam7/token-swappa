@@ -96,7 +96,7 @@ export function TokenSwappaApp() {
 
             if (value && !isNaN(Number(value))) {
                 setIsFromAmountRecalculating(true);
-                const timer = setTimeout(() => {
+                setTimeout(() => {
                     let toAmountInTokens = Number(value);
                     if (toUSDMode) {
                         // Handle division by zero for toToken.price
@@ -240,8 +240,8 @@ export function TokenSwappaApp() {
     };
 
     return (
-        <main className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
-            <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-lg">
+        <main className="flex items-center justify-center min-h-screen w-full bg-gray-100 dark:bg-gray-900 px-4 sm:px-6 overflow-x-hidden">
+            <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-3xl p-4 sm:p-6 shadow-lg overflow-hidden">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
                     <h1 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
