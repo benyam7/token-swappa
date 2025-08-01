@@ -4,6 +4,7 @@ export const defaultTokens: Omit<
     Token,
     'price' | 'priceChange24h' | 'volume24h'
 >[] = [
+    // Ethereum Mainnet
     {
         id: 'ethereum',
         symbol: 'ETH',
@@ -12,6 +13,8 @@ export const defaultTokens: Omit<
         color: 'bg-blue-500',
         contractAddress: '0x0000000000000000000000000000000000000000',
         chainId: 'ethereum',
+        numericChainId: 1,
+        chainLogo: '⟠',
     },
     {
         id: 'usd-coin',
@@ -21,6 +24,8 @@ export const defaultTokens: Omit<
         color: 'bg-blue-600',
         contractAddress: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
         chainId: 'ethereum',
+        numericChainId: 1,
+        chainLogo: '⟠',
     },
     {
         id: 'tether',
@@ -30,6 +35,8 @@ export const defaultTokens: Omit<
         color: 'bg-green-500',
         contractAddress: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
         chainId: 'ethereum',
+        numericChainId: 1,
+        chainLogo: '⟠',
     },
     {
         id: 'dai',
@@ -39,6 +46,8 @@ export const defaultTokens: Omit<
         color: 'bg-yellow-500',
         contractAddress: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
         chainId: 'ethereum',
+        numericChainId: 1,
+        chainLogo: '⟠',
     },
     {
         id: 'wrapped-bitcoin',
@@ -48,8 +57,9 @@ export const defaultTokens: Omit<
         color: 'bg-orange-500',
         contractAddress: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
         chainId: 'ethereum',
+        numericChainId: 1,
+        chainLogo: '⟠',
     },
-
     {
         id: 'chainlink',
         symbol: 'LINK',
@@ -58,6 +68,152 @@ export const defaultTokens: Omit<
         color: 'bg-blue-700',
         contractAddress: '0x514910771AF9Ca656af840dff83E8264EcF986CA',
         chainId: 'ethereum',
+        numericChainId: 1,
+        chainLogo: '⟠',
+    },
+
+    // Polygon
+    {
+        id: 'matic-network',
+        symbol: 'MATIC',
+        name: 'Polygon',
+        logo: '🔷',
+        color: 'bg-purple-500',
+        contractAddress: '0x0000000000000000000000000000000000000000',
+        chainId: 'polygon',
+        numericChainId: 137,
+        chainLogo: '🔷',
+    },
+    {
+        id: 'usd-coin-polygon',
+        symbol: 'USDC',
+        name: 'USD Coin (Polygon)',
+        logo: '$',
+        color: 'bg-blue-600',
+        contractAddress: '0x3c499c542cEF5E3811e1192cE70d8cC03D5c3359',
+        chainId: 'polygon',
+        numericChainId: 137,
+        chainLogo: '🔷',
+    },
+    {
+        id: 'tether-polygon',
+        symbol: 'USDT',
+        name: 'Tether (Polygon)',
+        logo: '₮',
+        color: 'bg-green-500',
+        contractAddress: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+        chainId: 'polygon',
+        numericChainId: 137,
+        chainLogo: '🔷',
+    },
+
+    // Solana
+    {
+        id: 'solana',
+        symbol: 'SOL',
+        name: 'Solana',
+        logo: '◎',
+        color: 'bg-gradient-to-r from-purple-400 to-pink-400',
+        contractAddress: '11111111111111111111111111111111',
+        chainId: 'solana',
+        numericChainId: 101,
+        chainLogo: '◎',
+    },
+
+    // Avalanche
+    {
+        id: 'avalanche-2',
+        symbol: 'AVAX',
+        name: 'Avalanche',
+        logo: '🔺',
+        color: 'bg-red-500',
+        contractAddress: '0x0000000000000000000000000000000000000000',
+        chainId: 'avalanche',
+        numericChainId: 43114,
+        chainLogo: '🔺',
+    },
+    {
+        id: 'joe',
+        symbol: 'JOE',
+        name: 'JoeToken',
+        logo: '☕',
+        color: 'bg-brown-500',
+        contractAddress: '0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
+        chainId: 'avalanche',
+        numericChainId: 43114,
+        chainLogo: '🔺',
+    },
+
+    // Arbitrum
+    {
+        id: 'ethereum-arbitrum',
+        symbol: 'ETH',
+        name: 'Ethereum (Arbitrum)',
+        logo: '⟠',
+        color: 'bg-blue-500',
+        contractAddress: '0x0000000000000000000000000000000000000000',
+        chainId: 'arbitrum',
+        numericChainId: 42161,
+        chainLogo: '⟠-🔵',
+    },
+    {
+        id: 'arbitrum',
+        symbol: 'ARB',
+        name: 'Arbitrum',
+        logo: '🔵',
+        color: 'bg-blue-400',
+        contractAddress: '0x912CE59144191C1204E64559FE8253a0e49E6548',
+        chainId: 'arbitrum',
+        numericChainId: 42161,
+        chainLogo: '🔵',
+    },
+
+    // Optimism
+    {
+        id: 'ethereum-optimism',
+        symbol: 'ETH',
+        name: 'Ethereum (Optimism)',
+        logo: '⟠',
+        color: 'bg-blue-500',
+        contractAddress: '0x0000000000000000000000000000000000000000',
+        chainId: 'optimism',
+        numericChainId: 10,
+        chainLogo: '⟠-🔴',
+    },
+    {
+        id: 'optimism',
+        symbol: 'OP',
+        name: 'Optimism',
+        logo: '🔴',
+        color: 'bg-red-400',
+        contractAddress: '0x4200000000000000000000000000000000000042',
+        chainId: 'optimism',
+        numericChainId: 10,
+        chainLogo: '⟠-🔴',
+    },
+
+    // Base
+    {
+        id: 'ethereum-base',
+        symbol: 'ETH',
+        name: 'Ethereum (Base)',
+        logo: '⟠',
+        color: 'bg-blue-500',
+        contractAddress: '0x0000000000000000000000000000000000000000',
+        chainId: 'base',
+        numericChainId: 8453,
+        chainLogo: '⟠',
+    },
+    {
+        id: 'wrapped-bitcoin',
+        symbol: 'WBTC',
+        name: 'Wrapped Bitcoin',
+        logo: '₿',
+        color: 'bg-orange-500',
+        contractAddress: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
+        chainId: 'base',
+        numericChainId: 1,
+        chainLogo: '₿',
     },
 ];
 

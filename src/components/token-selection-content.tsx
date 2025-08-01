@@ -12,6 +12,7 @@ import { chains } from '@/data/chains';
 import { topTokens } from '@/data/tokens';
 import { Shimmer, TokenShimmer } from './shimmer';
 import { formatCurrency } from '@/lib/formatters';
+import { cn } from '@/lib/utils';
 
 interface TokenSelectionContentProps {
     tokens: Token[];
@@ -161,13 +162,22 @@ export function TokenSelectionContent({
                                               aria-hidden="true"
                                           >
                                               <div
-                                                  className={`w-12 h-12 ${token.color} rounded-full flex items-center justify-center text-white font-bold`}
+                                                  className={cn(
+                                                      'w-12 h-12 rounded-full flex items-center justify-center overflow-hidden',
+                                                      token.color
+                                                          ? token.color
+                                                          : 'bg-transparent'
+                                                  )}
                                               >
                                                   {token.logo}
                                               </div>
-                                              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-yellow-500 rounded-full flex items-center justify-center">
-                                                  <span className="text-xs text-white">
-                                                      ⟠
+                                              <div
+                                                  className={cn(
+                                                      'absolute -bottom-1 -right-1 w-4 h-4  rounded-full flex items-center justify-center bg-gray-500'
+                                                  )}
+                                              >
+                                                  <span className="text-xs dark:text-white text-black">
+                                                      {token.chainLogo}
                                                   </span>
                                               </div>
                                           </div>
@@ -187,7 +197,7 @@ export function TokenSelectionContent({
                 aria-live="polite"
             >
                 {/* Cross-chain section */}
-                {!searchQuery && (
+                {/* {!searchQuery && (
                     <div className="p-4 border-b dark:border-gray-700">
                         <div className="flex items-center gap-2 mb-3">
                             <ArrowUpDown
@@ -235,7 +245,7 @@ export function TokenSelectionContent({
                             </div>
                         </div>
                     </div>
-                )}
+                )} */}
 
                 {/* Recent Searches */}
                 {!searchQuery && recentSearches.length > 0 && (
@@ -267,7 +277,12 @@ export function TokenSelectionContent({
                                 aria-label={`Select ${token.name} (${token.symbol})`}
                             >
                                 <div
-                                    className={`w-10 h-10 ${token.color} rounded-full flex items-center justify-center text-white font-bold`}
+                                    className={cn(
+                                        'w-10 h-10 rounded-full flex items-center justify-center overflow-hidden',
+                                        token.color
+                                            ? token.color
+                                            : 'bg-transparent'
+                                    )}
                                     aria-hidden="true"
                                 >
                                     {token.logo}
@@ -356,7 +371,12 @@ export function TokenSelectionContent({
                                       }`}
                                   >
                                       <div
-                                          className={`w-10 h-10 ${token.color} rounded-full flex items-center justify-center text-white font-bold`}
+                                          className={cn(
+                                              'w-10 h-10 rounded-full flex items-center justify-center overflow-hidden',
+                                              token.color
+                                                  ? token.color
+                                                  : 'bg-transparent'
+                                          )}
                                           aria-hidden="true"
                                       >
                                           {token.logo}

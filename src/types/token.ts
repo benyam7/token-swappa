@@ -10,6 +10,7 @@ export interface Token {
     contractAddress?: string;
     chainId?: string;
     chainLogo?: string;
+    numericChainId?: number;
 }
 
 export interface Chain {

@@ -5,6 +5,7 @@ import type { Token, Chain } from '@/types/token';
 import { useIsMobile } from '@/hooks/use-is-mobile';
 import { TokenSelectionContent } from '@/components/token-selection-content';
 import { chains } from '@/data/chains';
+import { cn } from '@/lib/utils';
 
 interface EnhancedTokenSelectorProps {
     selectedToken: Token | null;
@@ -90,17 +91,22 @@ export function EnhancedTokenSelector({
                     <>
                         <div className="relative">
                             <div
-                                className={`w-6 h-6 ${selectedToken.color} rounded-full flex items-center justify-center text-white text-xs font-bold`}
+                                className={cn(
+                                    'w-6 h-6 rounded-full flex items-center justify-center overflow-hidden',
+                                    selectedToken.color
+                                        ? selectedToken.color
+                                        : 'bg-transparent'
+                                )}
                                 aria-hidden="true"
                             >
                                 {selectedToken.logo}
                             </div>
                             {selectedToken.chainLogo && (
                                 <div
-                                    className="absolute -bottom-1 -right-1 w-3 h-3 bg-white rounded-full flex items-center justify-center"
+                                    className="absolute -bottom-1 -right-1 w-3 h-3 bg-white rounded-full flex items-center justify-center text-black"
                                     aria-hidden="true"
                                 >
-                                    <span className="text-xs">
+                                    <span className="text-xs text-black">
                                         {selectedToken.chainLogo}
                                     </span>
                                 </div>
