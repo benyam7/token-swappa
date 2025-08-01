@@ -13,14 +13,6 @@ interface FunKitPriceResponse {
     total: number;
 }
 
-// Map our chain IDs to FunKit chain IDs
-const chainIdMap: Record<string, string> = {
-    ethereum: '1',
-    'binance-smart-chain': '56',
-    'polygon-pos': '137',
-    'base-ethereum': '8453',
-};
-
 export function useFunKitPrice() {
     const [tokens, setTokens] = useState<Token[]>([]);
     const [loading, setLoading] = useState(true);
@@ -37,14 +29,17 @@ export function useFunKitPrice() {
                 setIsUpdating(true);
             }
             setError(null);
-
+            console.log(
+                'fetching prices from funkit these tokens',
+                defaultTokens
+            );
             try {
                 const tokensWithPrices: Token[] = [];
 
                 // Fetch prices for each token
                 for (const token of defaultTokens) {
                     try {
-                        const chainId = chainIdMap[token.chainId || 'ethereum'];
+                        const chainId = token.numericChainId;
 
                         if (!chainId) {
                             console.warn(
@@ -75,7 +70,7 @@ export function useFunKitPrice() {
                         } else {
                             // For ERC20 tokens, use contract address
                             const priceData = await getAssetPriceInfo({
-                                chainId,
+                                chainId: chainId.toString(),
                                 assetTokenAddress: token.contractAddress || '',
                                 apiKey: FUNKIT_API_KEY,
                             });
@@ -88,8 +83,8 @@ export function useFunKitPrice() {
                                         ? priceData
                                         : (priceData as FunKitPriceResponse)
                                               ?.unitPrice || 0,
-                                priceChange24h: 0, // FunKit may not provide this data
-                                volume24h: 0, // FunKit may not provide this data
+                                priceChange24h: 0, // FunKit dont provide this data
+                                volume24h: 0, // FunKit dont provide this data
                             });
                         }
                     } catch (tokenError) {

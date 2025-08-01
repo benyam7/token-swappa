@@ -196,57 +196,6 @@ export function TokenSelectionContent({
                 role="region"
                 aria-live="polite"
             >
-                {/* Cross-chain section */}
-                {/* {!searchQuery && (
-                    <div className="p-4 border-b dark:border-gray-700">
-                        <div className="flex items-center gap-2 mb-3">
-                            <ArrowUpDown
-                                className="w-4 h-4 text-gray-600 dark:text-gray-400"
-                                aria-hidden="true"
-                            />
-                            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                                Swap across networks
-                            </span>
-                        </div>
-                        <div
-                            className="flex gap-3 overflow-x-auto"
-                            role="group"
-                            aria-label="Tokens for cross-network swap"
-                        >
-                            {Array.from({ length: 4 }).map((_, i) => (
-                                <button
-                                    key={i}
-                                    className="flex flex-col items-center min-w-[60px] focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
-                                    aria-label="USDC on Polygon"
-                                >
-                                    <div
-                                        className="relative mb-1"
-                                        aria-hidden="true"
-                                    >
-                                        <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-                                            $
-                                        </div>
-                                        <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
-                                            <span className="text-xs text-white">
-                                                ⬟
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <span className="text-xs font-medium">
-                                        USDC
-                                    </span>
-                                </button>
-                            ))}
-                            <div
-                                className="flex items-center justify-center min-w-[60px] text-gray-400"
-                                aria-hidden="true"
-                            >
-                                <span className="text-sm">6+</span>
-                            </div>
-                        </div>
-                    </div>
-                )} */}
-
                 {/* Recent Searches */}
                 {!searchQuery && recentSearches.length > 0 && (
                     <div className="p-4 border-b dark:border-gray-700">

@@ -107,43 +107,6 @@ export const defaultTokens: Omit<
         chainLogo: '🔷',
     },
 
-    // Solana
-    {
-        id: 'solana',
-        symbol: 'SOL',
-        name: 'Solana',
-        logo: '◎',
-        color: 'bg-gradient-to-r from-purple-400 to-pink-400',
-        contractAddress: '11111111111111111111111111111111',
-        chainId: 'solana',
-        numericChainId: 101,
-        chainLogo: '◎',
-    },
-
-    // Avalanche
-    {
-        id: 'avalanche-2',
-        symbol: 'AVAX',
-        name: 'Avalanche',
-        logo: '🔺',
-        color: 'bg-red-500',
-        contractAddress: '0x0000000000000000000000000000000000000000',
-        chainId: 'avalanche',
-        numericChainId: 43114,
-        chainLogo: '🔺',
-    },
-    {
-        id: 'joe',
-        symbol: 'JOE',
-        name: 'JoeToken',
-        logo: '☕',
-        color: 'bg-brown-500',
-        contractAddress: '0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
-        chainId: 'avalanche',
-        numericChainId: 43114,
-        chainLogo: '🔺',
-    },
-
     // Arbitrum
     {
         id: 'ethereum-arbitrum',
@@ -205,7 +168,7 @@ export const defaultTokens: Omit<
         chainLogo: '⟠',
     },
     {
-        id: 'wrapped-bitcoin',
+        id: 'wrapped-bitcoin-base',
         symbol: 'WBTC',
         name: 'Wrapped Bitcoin',
         logo: '₿',
@@ -217,6 +180,54 @@ export const defaultTokens: Omit<
     },
 ];
 
-export const topTokens = defaultTokens.slice(1, 5); // USDC, USDT, DAI, BNB
+// required tokens for the app
+export const topTokens = [
+    {
+        id: 'usd-coin',
+        symbol: 'USDC',
+        name: 'USD Coin',
+        logo: '$',
+        color: 'bg-blue-600',
+        contractAddress: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+        chainId: 'ethereum',
+        numericChainId: 1,
+        chainLogo: '⟠',
+    },
+    {
+        id: 'tether-polygon',
+        symbol: 'USDT',
+        name: 'Tether (Polygon)',
+        logo: '₮',
+        color: 'bg-green-500',
+        contractAddress: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+        chainId: 'polygon',
+        numericChainId: 137,
+        chainLogo: '🔷',
+    },
+
+    {
+        id: 'ethereum-base',
+        symbol: 'ETH',
+        name: 'Ethereum (Base)',
+        logo: '⟠',
+        color: 'bg-blue-500',
+        contractAddress: '0x0000000000000000000000000000000000000000',
+        chainId: 'base',
+        numericChainId: 8453,
+        chainLogo: '⟠',
+    },
+
+    {
+        id: 'wrapped-bitcoin-base',
+        symbol: 'WBTC',
+        name: 'Wrapped Bitcoin',
+        logo: '₿',
+        color: 'bg-orange-500',
+        contractAddress: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
+        chainId: 'base',
+        numericChainId: 1,
+        chainLogo: '₿',
+    },
+];
 export const popularTokens = defaultTokens.slice(0, 4);
 export const tokens = defaultTokens;
