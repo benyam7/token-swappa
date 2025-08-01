@@ -177,50 +177,22 @@ export function TokenInput({
                             autoFocus={autoFocus}
                         />
                     )}
+                    {/* Token Selector or  */}
 
-                    {/* Token Selector or Mobile Quick Select */}
-                    {isMobile && !token ? (
-                        // Mobile Quick Select Preview
-                        <div className="flex items-center gap-2 flex-shrink-0">
-                            {popularTokens.map((t) => (
-                                <button
-                                    key={t.id}
-                                    onClick={() => onTokenSelect(t)}
-                                    className="w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
-                                    aria-label={`Select ${t.name} (${t.symbol})`}
-                                >
-                                    <div
-                                        className={`w-7 h-7 ${t.color} rounded-full flex items-center justify-center text-white text-xs font-bold`}
-                                        aria-hidden="true"
-                                    >
-                                        {t.logo}
-                                    </div>
-                                </button>
-                            ))}
-                            {/* Custom "Select token" button for mobile */}
-                            <Button
-                                onClick={() => setIsSelectorOpen(true)}
-                                className="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded-full h-auto focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 flex-shrink-0"
-                            >
-                                Select token
-                            </Button>
-                        </div>
-                    ) : (
-                        // Desktop or selected token view: use EnhancedTokenSelector's default button
-                        <EnhancedTokenSelector
-                            selectedToken={token}
-                            onTokenSelect={onTokenSelect}
-                            placeholder={token ? undefined : 'Select token'}
-                            tokens={tokens}
-                            loading={loading}
-                            error={error}
-                            onRetry={onRetry}
-                            idPrefix={inputId}
-                            isOpen={isSelectorOpen}
-                            setIsOpen={setIsSelectorOpen}
-                            className="flex-shrink-0"
-                        />
-                    )}
+                    {/* EnhancedTokenSelector's default button */}
+                    <EnhancedTokenSelector
+                        selectedToken={token}
+                        onTokenSelect={onTokenSelect}
+                        placeholder={token ? undefined : 'Select token'}
+                        tokens={tokens}
+                        loading={loading}
+                        error={error}
+                        onRetry={onRetry}
+                        idPrefix={inputId}
+                        isOpen={isSelectorOpen}
+                        setIsOpen={setIsSelectorOpen}
+                        className="flex-shrink-0"
+                    />
                 </div>
                 <div className="text-gray-500 dark:text-gray-400 text-sm flex ">
                     {isUSDMode ? (

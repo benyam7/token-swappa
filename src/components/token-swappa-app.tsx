@@ -329,7 +329,7 @@ export function TokenSwappaApp() {
                 </div>
 
                 {/* To Section with Quick Select */}
-                {/* Removed the QuickTokenSelector wrapper div here */}
+
                 <TokenInput
                     label="For"
                     token={toToken}

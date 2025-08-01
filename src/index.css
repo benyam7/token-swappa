@@ -120,8 +120,17 @@
 }
 
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
     padding: 0rem !important;
-    text-align: center;
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Hide the default appearance */
+    margin: 0; /* Remove any default margin */
+}
+
+/* For Mozilla Firefox */
+input[type='number'] {
+    -moz-appearance: textfield; /* Style as a regular text field */
 }
