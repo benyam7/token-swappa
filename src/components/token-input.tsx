@@ -163,7 +163,7 @@ export function TokenInput({
                     ) : (
                         <input
                             id={inputId}
-                            type="text"
+                            type="number"
                             value={amount}
                             onChange={handleAmountChange}
                             placeholder={placeholder}
