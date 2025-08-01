@@ -186,7 +186,7 @@ export function TokenInput({
                                 <button
                                     key={t.id}
                                     onClick={() => onTokenSelect(t)}
-                                    className="w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                                    className="w-10 h-10 bg-white dark:bg-gray-800 rounded-full shadow-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                                     aria-label={`Select ${t.name} (${t.symbol})`}
                                 >
                                     <div
@@ -200,7 +200,7 @@ export function TokenInput({
                             {/* Custom "Select token" button for mobile */}
                             <Button
                                 onClick={() => setIsSelectorOpen(true)}
-                                className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-full h-auto focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 flex-shrink-0"
+                                className="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded-full h-auto focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 flex-shrink-0"
                             >
                                 Select token
                             </Button>
@@ -226,7 +226,7 @@ export function TokenInput({
                     {isUSDMode ? (
                         <button
                             onClick={onUSDToggle}
-                            className="hover:text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-200"
+                            className="hover:text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-200"
                             aria-pressed={isUSDMode}
                             aria-label={`Toggle ${label} amount to token value`}
                         >
@@ -241,7 +241,7 @@ export function TokenInput({
                     ) : (
                         <button
                             onClick={onUSDToggle}
-                            className="hover:text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-200"
+                            className="hover:text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-200"
                             aria-pressed={isUSDMode}
                             aria-label={`Toggle ${label} amount to USD value`}
                         >
@@ -258,7 +258,7 @@ export function TokenInput({
                         Failed to fetch price.{' '}
                         <button
                             onClick={onRetry}
-                            className="underline focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 dark:text-red-300 dark:hover:text-red-100"
+                            className="underline focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:text-red-300 dark:hover:text-red-100"
                         >
                             Retry
                         </button>

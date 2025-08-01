@@ -97,7 +97,7 @@ export function TokenSelectionContent({
                             placeholder="Search tokens"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 border dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500"
+                            className="w-full pl-10 pr-4 py-3 border dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500"
                             aria-label="Search tokens"
                         />
                     </div>
@@ -132,7 +132,7 @@ export function TokenSelectionContent({
                                           onClick={() =>
                                               handleSelectAndClose(token)
                                           }
-                                          className="flex flex-col items-center p-3 rounded-xl border dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                                          className="flex flex-col items-center p-3 rounded-xl border dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                                           aria-label={`Select ${token.name} (${token.symbol})`}
                                       >
                                           <div
@@ -190,7 +190,7 @@ export function TokenSelectionContent({
                             <Button
                                 variant="ghost"
                                 size="sm"
-                                className="text-sm text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-200"
+                                className="text-sm text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-200"
                                 aria-label="Clear recent searches"
                             >
                                 Clear
@@ -200,7 +200,7 @@ export function TokenSelectionContent({
                             <button
                                 key={token.id}
                                 onClick={() => handleSelectAndClose(token)}
-                                className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                                className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                                 aria-label={`Select ${token.name} (${token.symbol})`}
                             >
                                 <div
@@ -261,7 +261,7 @@ export function TokenSelectionContent({
                             onClick={onRetry}
                             variant="outline"
                             size="sm"
-                            className="focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 bg-transparent dark:text-red-300 dark:hover:text-red-100"
+                            className="focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 bg-transparent dark:text-red-300 dark:hover:text-red-100"
                         >
                             Retry
                         </Button>
@@ -293,7 +293,7 @@ export function TokenSelectionContent({
                                       onClick={() =>
                                           handleSelectAndClose(token)
                                       }
-                                      className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                                      className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                                       aria-label={`Select ${token.name} (${
                                           token.symbol
                                       }). Price: ${formatCurrency(

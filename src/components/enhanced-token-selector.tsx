@@ -78,10 +78,10 @@ export function EnhancedTokenSelector({
                 id={`${idPrefix}-token-select-button`}
                 ref={triggerRef}
                 onClick={() => setIsOpen(true)} // Always set to true to open
-                className={`flex items-center gap-2 rounded-full px-3 py-2 h-auto focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 ${
+                className={`flex items-center gap-2 rounded-full px-3 py-2 h-auto focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 ${
                     selectedToken
                         ? 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100'
-                        : 'bg-pink-500 hover:bg-pink-600 text-white' // Apply pink color when no token is selected
+                        : 'bg-teal-500 hover:bg-teal-600 text-white' // Apply teal color when no token is selected
                 }`}
                 aria-haspopup="dialog"
                 aria-expanded={isOpen}

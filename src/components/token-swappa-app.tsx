@@ -317,7 +317,7 @@ export function TokenSwappaApp() {
                         variant="ghost"
                         size="icon"
                         onClick={handleSwapTokens}
-                        className="bg-gray-200 hover:bg-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300"
+                        className="bg-gray-200 hover:bg-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300"
                         disabled={!toToken || !fromToken || loading}
                         aria-label="Swap tokens"
                     >
@@ -386,7 +386,7 @@ export function TokenSwappaApp() {
 
                 {/* Review Button */}
                 <Button
-                    className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 rounded-2xl text-lg mb-4 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                    className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-4 rounded-2xl text-lg mb-4 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                     disabled={
                         !fromAmount ||
                         fromAmount === '0' ||
