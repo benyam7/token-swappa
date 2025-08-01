@@ -101,28 +101,6 @@ export function TokenSelectionContent({
                             aria-label="Search tokens"
                         />
                     </div>
-                    <div
-                        className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 rounded-xl px-3"
-                        role="group"
-                        aria-label="Select chain"
-                    >
-                        {chains.slice(0, 3).map((chain) => (
-                            <button
-                                key={chain.id}
-                                onClick={() => setSelectedChain(chain)}
-                                className={`w-6 h-6 ${chain.color} rounded-full flex items-center justify-center text-white text-xs cursor-pointer focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2`}
-                                title={chain.name}
-                                aria-pressed={selectedChain.id === chain.id}
-                                aria-label={`Select ${chain.name} chain`}
-                            >
-                                {chain.logo}
-                            </button>
-                        ))}
-                        <ChevronDown
-                            className="w-4 h-4 text-gray-600 dark:text-gray-400 ml-1"
-                            aria-hidden="true"
-                        />
-                    </div>
                 </div>
 
                 {/* Top Tokens */}
@@ -226,15 +204,28 @@ export function TokenSelectionContent({
                                 aria-label={`Select ${token.name} (${token.symbol})`}
                             >
                                 <div
-                                    className={cn(
-                                        'w-10 h-10 rounded-full flex items-center justify-center overflow-hidden',
-                                        token.color
-                                            ? token.color
-                                            : 'bg-transparent'
-                                    )}
+                                    className="relative mb-2"
                                     aria-hidden="true"
                                 >
-                                    {token.logo}
+                                    <div
+                                        className={cn(
+                                            'w-12 h-12 rounded-full flex items-center justify-center overflow-hidden',
+                                            token.color
+                                                ? token.color
+                                                : 'bg-transparent'
+                                        )}
+                                    >
+                                        {token.logo}
+                                    </div>
+                                    <div
+                                        className={cn(
+                                            'absolute -bottom-1 -right-1 w-4 h-4  rounded-full flex items-center justify-center bg-gray-500'
+                                        )}
+                                    >
+                                        <span className="text-xs dark:text-white text-black">
+                                            {token.chainLogo}
+                                        </span>
+                                    </div>
                                 </div>
                                 <div className="flex-1 text-left">
                                     <div className="font-semibold text-gray-900 dark:text-gray-100">
@@ -320,15 +311,28 @@ export function TokenSelectionContent({
                                       }`}
                                   >
                                       <div
-                                          className={cn(
-                                              'w-10 h-10 rounded-full flex items-center justify-center overflow-hidden',
-                                              token.color
-                                                  ? token.color
-                                                  : 'bg-transparent'
-                                          )}
+                                          className="relative mb-2"
                                           aria-hidden="true"
                                       >
-                                          {token.logo}
+                                          <div
+                                              className={cn(
+                                                  'w-12 h-12 rounded-full flex items-center justify-center overflow-hidden',
+                                                  token.color
+                                                      ? token.color
+                                                      : 'bg-transparent'
+                                              )}
+                                          >
+                                              {token.logo}
+                                          </div>
+                                          <div
+                                              className={cn(
+                                                  'absolute -bottom-1 -right-1 w-4 h-4  rounded-full flex items-center justify-center bg-gray-500'
+                                              )}
+                                          >
+                                              <span className="text-xs dark:text-white text-black">
+                                                  {token.chainLogo}
+                                              </span>
+                                          </div>
                                       </div>
                                       <div className="flex-1 text-left">
                                           <div className="font-semibold text-gray-900 dark:text-gray-100">
