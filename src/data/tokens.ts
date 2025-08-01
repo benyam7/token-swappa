@@ -19,7 +19,7 @@ export const defaultTokens: Omit<
         name: 'USD Coin',
         logo: '$',
         color: 'bg-blue-600',
-        contractAddress: '0xA0b86a33E6441e6e80D0c4C96C5C2e5c5e5c5e5c',
+        contractAddress: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
         chainId: 'ethereum',
     },
     {
@@ -39,15 +39,6 @@ export const defaultTokens: Omit<
         color: 'bg-yellow-500',
         contractAddress: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
         chainId: 'ethereum',
-    },
-    {
-        id: 'binancecoin',
-        symbol: 'BNB',
-        name: 'BNB',
-        logo: '⬢',
-        color: 'bg-yellow-600',
-        contractAddress: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52',
-        chainId: 'binance-smart-chain',
     },
     {
         id: 'wrapped-bitcoin',

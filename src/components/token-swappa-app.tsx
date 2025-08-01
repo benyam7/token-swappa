@@ -10,12 +10,14 @@ import {
 } from 'lucide-react';
 import { TokenInput } from '@/components/token-input';
 import type { Token, TokenOrNull } from '@/types/token';
-import { useCoinGeckoPrice } from '@/hooks/use-coin-gecko-price';
+import { useTokenPrices } from '@/hooks/use-token-prices';
 import { formatCurrency } from '@/lib/formatters';
 import { useTheme } from '@/hooks/use-theme';
 
 export function TokenSwappaApp() {
-    const { tokens, loading, error, retry, isUpdating } = useCoinGeckoPrice();
+    const { tokens, loading, error, retry, isUpdating, priceSource } =
+        useTokenPrices();
+    console.log('price source', priceSource);
     const [fromToken, setFromToken] = useState<TokenOrNull>(null);
     const [toToken, setToToken] = useState<TokenOrNull>(null);
     const [fromAmount, setFromAmount] = useState<string>(''); // Changed initial value to ""
@@ -403,12 +405,26 @@ export function TokenSwappaApp() {
                             Loading...
                         </span>
                     ) : (
-                        'Connect Wallet'
+                        'Swap'
                     )}
                 </Button>
 
                 {/* Footer */}
-                <footer className="flex items-center justify-center gap-2 text-gray-500 text-sm dark:text-gray-400"></footer>
+                <footer className="flex items-center justify-center gap-2 text-gray-500 text-sm dark:text-gray-400">
+                    {priceSource && (
+                        <span className="flex items-center gap-1">
+                            <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                            Price data from{' '}
+                            {priceSource === 'funkit' ? 'FunKit' : 'CoinGecko'}
+                        </span>
+                    )}
+                    {isUpdating && (
+                        <span className="flex items-center gap-1 ml-2">
+                            <Loader2 className="w-3 h-3 animate-spin" />
+                            Updating prices...
+                        </span>
+                    )}
+                </footer>
             </div>
         </main>
     );
