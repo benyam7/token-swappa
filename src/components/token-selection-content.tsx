@@ -13,6 +13,7 @@ import { topTokens } from '@/data/tokens';
 import { Shimmer, TokenShimmer } from './shimmer';
 import { formatCurrency } from '@/lib/formatters';
 import { cn } from '@/lib/utils';
+import { ScrollArea, ScrollBar } from './ui/scroll-area';
 
 interface TokenSelectionContentProps {
     tokens: Token[];
@@ -269,25 +270,28 @@ export function TokenSelectionContent({
                 )}
 
                 {/* Tokens by Volume */}
-                <div className="p-4">
-                    <div className="flex items-center gap-2 mb-3">
-                        <TrendingUp
-                            className="w-4 h-4 text-gray-600 dark:text-gray-400"
-                            aria-hidden="true"
-                        />
-                        <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                            {searchQuery
-                                ? 'Search Results'
-                                : 'Tokens by 24H volume'}
-                        </span>
-                    </div>
+                <ScrollArea className="h-[300px] md:h-full">
+                    <div className="p-4">
+                        <div className="flex items-center gap-2 mb-3">
+                            <TrendingUp
+                                className="w-4 h-4 text-gray-600 dark:text-gray-400"
+                                aria-hidden="true"
+                            />
+                            <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                                {searchQuery
+                                    ? 'Search Results'
+                                    : 'Tokens by 24H volume'}
+                            </span>
+                        </div>
 
-                    {loading && !error
-                        ? Array.from({ length: 6 }).map((_, i) => (
-                              <TokenShimmer key={i} aria-hidden="true" />
-                          ))
-                        : (searchQuery ? filteredTokens : tokensByVolume).map(
-                              (token) => (
+                        {loading && !error
+                            ? Array.from({ length: 6 }).map((_, i) => (
+                                  <TokenShimmer key={i} aria-hidden="true" />
+                              ))
+                            : (searchQuery
+                                  ? filteredTokens
+                                  : tokensByVolume
+                              ).map((token) => (
                                   <button
                                       key={token.id}
                                       onClick={() =>
@@ -367,17 +371,18 @@ export function TokenSelectionContent({
                                           </div>
                                       </div>
                                   </button>
-                              )
-                          )}
-                    {!loading &&
-                        !error &&
-                        (searchQuery ? filteredTokens : tokensByVolume)
-                            .length === 0 && (
-                            <div className="text-center text-gray-500 dark:text-gray-400 py-4">
-                                No tokens found.
-                            </div>
-                        )}
-                </div>
+                              ))}
+                        {!loading &&
+                            !error &&
+                            (searchQuery ? filteredTokens : tokensByVolume)
+                                .length === 0 && (
+                                <div className="text-center text-gray-500 dark:text-gray-400 py-4">
+                                    No tokens found.
+                                </div>
+                            )}
+                    </div>
+                    <ScrollBar orientation="vertical" />
+                </ScrollArea>
             </div>
         </div>
     );

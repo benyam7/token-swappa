@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@funkit/api-base": "^1.9.7",
+        "@radix-ui/react-scroll-area": "^1.1.0",
         "@radix-ui/react-slot": "^1.2.3",
         "@tailwindcss/vite": "^4.1.11",
         "class-variance-authority": "^0.7.1",
