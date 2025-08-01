@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'; // Import useRef
 import type { Token, PriceData } from '@/types/token';
-import { defaultTokens } from '@/data/tokens';
+import { defaultTokens, topTokens } from '@/data/tokens';
 
 const POLLING_INTERVAL = 300000; // 5 minutes (ideally we should fetch every 5 seconds or 3 seconds, but here coingecko )
 
@@ -22,9 +22,7 @@ export function useCoinGeckoPrice() {
             setError(null);
 
             try {
-                const tokenIds = defaultTokens
-                    .map((token) => token.id)
-                    .join(',');
+                const tokenIds = topTokens.map((token) => token.id).join(',');
                 const response = await fetch(
                     `https://api.coingecko.com/api/v3/simple/price?ids=${tokenIds}&vs_currencies=usd&include_24hr_change=true&include_24hr_vol=true&x_cg_demo_api_key=${
                         import.meta.env.VITE_COINGECKO_API_KEY

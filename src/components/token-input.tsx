@@ -109,7 +109,7 @@ export function TokenInput({
                 }
             >
                 {/* Quick Token Selector - Rendered here, positioned absolutely */}
-                {!isMobile &&
+                {/* {!isMobile &&
                     showQuickSelect &&
                     !token && ( // Only show on desktop for 'for' section, if no token selected
                         <QuickTokenSelector
@@ -122,7 +122,7 @@ export function TokenInput({
                                 onHover ? () => onHover(false) : undefined
                             }
                         />
-                    )}
+                    )} */}
 
                 {/* Main content area */}
                 <div className="flex items-center justify-between mb-2">

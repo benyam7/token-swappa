@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { getAssetPriceInfo } from '@funkit/api-base';
 import type { Token } from '@/types/token';
-import { defaultTokens } from '@/data/tokens';
+import { defaultTokens, topTokens } from '@/data/tokens';
 
 const POLLING_INTERVAL = 300000; // 5 minutes
 const FUNKIT_API_KEY = import.meta.env.VITE_FUNKIT_API_KEY;
@@ -37,7 +37,7 @@ export function useFunKitPrice() {
                 const tokensWithPrices: Token[] = [];
 
                 // Fetch prices for each token
-                for (const token of defaultTokens) {
+                for (const token of topTokens) {
                     try {
                         const chainId = token.numericChainId;
 
